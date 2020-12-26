@@ -89,7 +89,7 @@ class NovalnetInvoicePaymentMethod extends PaymentMethodBaseService
      *
      * @return string
      */
-    public function getIcon(string $lang):string
+    public function getIcon(string $lang = 'de'):string
     {
         $logoUrl = $this->config->get('Novalnet.novalnet_invoice_payment_logo');
         if($logoUrl == 'images/novalnet_invoice.png')
@@ -106,7 +106,7 @@ class NovalnetInvoicePaymentMethod extends PaymentMethodBaseService
      *
      * @return string
      */
-    public function getDescription(string $lang):string
+    public function getDescription(string $lang = 'de'):string
     {
         $description = trim($this->config->get('Novalnet.novalnet_invoice_description'));
         return ($description ? $description : $this->paymentHelper->getTranslatedText('invoice_prepayment_payment_description'));
@@ -158,7 +158,7 @@ class NovalnetInvoicePaymentMethod extends PaymentMethodBaseService
      * @param  string  $lang
      * @return string
      */
-    public function getBackendName(string $lang):string
+    public function getBackendName(string $lang = 'de'):string
     {
         return 'Novalnet Invoice';
     }
