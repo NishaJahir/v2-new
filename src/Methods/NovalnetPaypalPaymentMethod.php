@@ -89,7 +89,7 @@ class NovalnetPaypalPaymentMethod extends PaymentMethodBaseService
      *
      * @return string
      */
-    public function getIcon(string $lang):string
+    public function getIcon(string $lang = 'de'):string
     {
         $logoUrl = $this->config->get('Novalnet.novalnet_paypal_payment_logo');
         if($logoUrl == 'images/novalnet_paypal.png')
@@ -107,7 +107,7 @@ class NovalnetPaypalPaymentMethod extends PaymentMethodBaseService
      *
      * @return string
      */
-    public function getDescription(string $lang):string
+    public function getDescription(string $lang = 'de'):string
     {
         $description = trim($this->config->get('Novalnet.novalnet_paypal_description'));
         return ($description ? $description : $this->paymentHelper->getTranslatedText('redirectional_payment_description'));
@@ -159,7 +159,7 @@ class NovalnetPaypalPaymentMethod extends PaymentMethodBaseService
      * @param  string  $lang
      * @return string
      */
-    public function getBackendName(string $lang):string
+    public function getBackendName(string $lang = 'de'):string
     {
         return 'Novalnet PayPal';
     }
