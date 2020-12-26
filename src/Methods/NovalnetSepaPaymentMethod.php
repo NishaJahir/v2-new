@@ -89,7 +89,7 @@ class NovalnetSepaPaymentMethod extends PaymentMethodBaseService
      *
      * @return string
      */
-    public function getIcon(string $lang):string
+    public function getIcon(string $lang = 'de'):string
     {
         $logoUrl = $this->config->get('Novalnet.novalnet_sepa_payment_logo');
         if($logoUrl == 'images/novalnet_sepa.png')
@@ -107,7 +107,7 @@ class NovalnetSepaPaymentMethod extends PaymentMethodBaseService
      *
      * @return string
      */
-    public function getDescription(string $lang):string
+    public function getDescription(string $lang = 'de'):string
     {
         $description = trim($this->config->get('Novalnet.novalnet_sepa_description'));
         return ($description ? $description : $this->paymentHelper->getTranslatedText('sepa_payment_description'));
