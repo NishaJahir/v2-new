@@ -159,7 +159,7 @@ class NovalnetSepaPaymentMethod extends PaymentMethodBaseService
      * @param  string  $lang
      * @return string
      */
-    public function getBackendName(string $lang):string
+    public function getBackendName(string $lang = 'de'):string
     {
         return 'Novalnet SEPA direct debit';
     }
